@@ -17,12 +17,12 @@ export const obtenerEmailPorId = async (id_email) => {
         const respuesta = await api.get(`/email/${idEmailNumerico}`);
         return respuesta.data
     } catch (error){
-        console.error("Error al obtener el usuario :", error);
+        console.error("Error al obtener el email :", error);
         throw error;
     }
 };
 
-export const agregarUsuario = async (nuevaEmail) => {
+export const agregarEmail = async (nuevaEmail) => {
   try {
     const datos_email ={
         email: nuevaEmail.email,
@@ -49,7 +49,7 @@ export const actualizarEmail = async (EmailActualizada) => {
     const respuesta = await api.put("/email", datos_email);
     return respuesta.data;
   } catch (error) {
-    console.error("Error al actualizar el usuario:", error);
+    console.error("Error al actualizar el email:", error);
     throw error;
   }
 };
